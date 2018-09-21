@@ -1,0 +1,94 @@
+%YAML 1.1
+---
+actions:
+- utter_greet
+- utter_goodbye
+- utter_default
+- utter_thanks
+- utter_ask_morehelp
+- utter_ask_time
+- utter_ask_package
+- utter_ack_management
+- action_search_consume
+- action_weekday
+config:
+  store_entities_as_slots: true
+entities:
+- item
+- time
+- phone_number
+- price
+- times
+- day
+- location
+intents:
+- greet:
+    use_entities: true
+- confirm:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- thanks:
+    use_entities: true
+- inform_item:
+    use_entities: true
+- inform_package:
+    use_entities: true
+- inform_time:
+    use_entities: true
+- request_management:
+    use_entities: true
+- request_search:
+    use_entities: true
+- deny:
+    use_entities: true
+- inform_current_phone:
+    use_entities: true
+- inform_other_phone:
+    use_entities: true
+- weather:
+    use_entities: true
+- request_day:
+    use_entities: true
+slots:
+  item:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  phone_number:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  price:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  time:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  times:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+templates:
+  utter_ack_management:
+  - text: 已經為您辦理好了{item}
+  utter_ask_morehelp:
+  - text: 還有什麼能幫您嗎
+  - text: 您還想幹什麼
+  utter_ask_package:
+  - text: 我們現在支持辦理流量套餐：套餐一：二十元包月三十兆；套餐二：四十元包月八十兆，請問您需要哪個？
+  - text: 我們有如下套餐供您選擇：套餐一：二十元包月三十兆；套餐二：四十元包月八十兆，請問您需要哪個？
+  utter_ask_time:
+  - text: 你想查哪個時間段的
+  - text: 你想查幾月份的
+  utter_default:
+  - text: 您說什麼
+  - text: 您能再說一遍嗎，我沒聽清
+  utter_goodbye:
+  - text: 再見，為您服務很開心
+  - text: Bye， 下次再見
+  utter_greet:
+  - text: 您好!，我是機器人小熱，很高興為您服務。
+  - text: 你好!，我是小熱，可以幫您辦理流量套餐，話費查詢等業務。
+  - text: hi!，人家是小熱，有什麼可以幫您嗎。
+  utter_thanks:
+  - text: 不用謝
+  - text: 我應該做的
+  - text: 您開心我就開心

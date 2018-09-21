@@ -1,0 +1,75 @@
+slots:
+  item:
+    type: text
+  time:
+    type: text
+  phone_number:
+    type: text
+  price:
+    type: text
+  times:
+    type: text
+
+intents:
+  - greet
+  - confirm
+  - goodbye
+  - thanks
+  - inform_item
+  - inform_package
+  - inform_time
+  - request_management
+  - request_search
+  - deny
+  - inform_current_phone
+  - inform_other_phone
+  - weather
+  - request_day
+
+entities:
+  - item
+  - time
+  - phone_number
+  - price
+  - times
+  - day
+  - location
+
+templates:
+  utter_greet:
+    - "您好!，我是機器人小熱，很高興為您服務。"
+    - "你好!，我是小熱，可以幫您辦理流量套餐，話費查詢等業務。"
+    - "hi!，人家是小熱，有什麼可以幫您嗎。"
+  utter_goodbye:
+    - "再見，為您服務很開心"
+    - "Bye， 下次再見"
+  utter_default:
+    - "您說什麼"
+    - "您能再說一遍嗎，我沒聽清"
+  utter_thanks:
+    - "不用謝"
+    - "我應該做的"
+    - "您開心我就開心"
+  utter_ask_morehelp:
+    - "還有什麼能幫您嗎"
+    - "您還想幹什麼"
+  utter_ask_time:
+    - "你想查哪個時間段的"
+    - "你想查幾月份的"
+  utter_ask_package:
+    - "我們現在支持辦理流量套餐：套餐一：二十元包月三十兆；套餐二：四十元包月八十兆，請問您需要哪個？"
+    - "我們有如下套餐供您選擇：套餐一：二十元包月三十兆；套餐二：四十元包月八十兆，請問您需要哪個？"
+  utter_ack_management:
+    - "已經為您辦理好了{item}"
+
+actions:
+  - utter_greet
+  - utter_goodbye
+  - utter_default
+  - utter_thanks
+  - utter_ask_morehelp
+  - utter_ask_time
+  - utter_ask_package
+  - utter_ack_management
+  - action_search_consume
+  - action_weekday
